@@ -1,0 +1,35 @@
+@model List<Client>
+
+<h1>Clients List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Client Name</th>
+            <th>Room Number</th>
+            <th>Occupied Hours</th>
+            <th>Payment Status</th>
+            <th>Total Cost</th>
+            <th>Status</th>
+            <th>Client Id Proof</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td>@client.Name</td>
+                <td>@client.Room.RoomNumber</td>
+                <td>@client.OccupiedHours</td>
+                <td>@client.PaymentStatus</td>
+                <td>@client.TotalCost</td>
+                <td>@client.Status</td>
+                <td>@client.IdProof</td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+
