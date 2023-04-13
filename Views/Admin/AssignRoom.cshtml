@@ -1,0 +1,34 @@
+@model AssignRoomViewModel
+
+<h2>Assign Room</h2>
+
+@using (Html.BeginForm("AssignRoom", "Admin"))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.RoomId)
+        @Html.DropDownListFor(model => model.RoomId, Model.Rooms, "Select Room", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.RoomId)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CheckInDate)
+        @Html.TextBoxFor(model => model.CheckInDate, "{0:yyyy-MM-dd}", new { @class = "form-control datepicker" })
+        @Html.ValidationMessageFor(model => model.CheckInDate)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CheckOutDate)
+        @Html.TextBoxFor(model => model.CheckOutDate, "{0:yyyy-MM-dd}", new { @class = "form-control datepicker" })
+        @Html.ValidationMessageFor(model => model.CheckOutDate)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NumOfGuests)
+        @Html.TextBoxFor(model => model.NumOfGuests, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.NumOfGuests)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Assign Room</button>
+}
+
+
