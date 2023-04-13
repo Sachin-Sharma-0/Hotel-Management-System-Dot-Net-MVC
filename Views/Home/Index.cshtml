@@ -1,0 +1,77 @@
+@model RoomSearch
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+</div><br />
+
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://th.bing.com/th/id/OIP.jsYKkEwghgDtJtF19sPEEgHaEK?w=297&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Welcome to our hotel</h5>
+                <p>Book now and get 20% off on your first stay</p>
+                <a href="@Url.Action("BookRoom", "Home")" class="btn btn-primary">Book Now</a>
+            </div>
+        </div>
+    </div>
+</div><br />
+
+<div class="jumbotron">
+    <h1>Welcome to the Hotel</h1>
+    <p class="lead">Pick your best place where 'Your Dreams Comes True'</p>
+</div><br />
+
+<div class="jumbotron">
+    <h1 class="display-3">Search Room</h1>
+
+</div><br />
+
+<div class="form-group">
+    <label asp-for="FromDate" class="control-label col-md-2"></label>
+    <div class="col-md-4">
+        <input asp-for="FromDate" class="form-control" type="date" required />
+    </div>
+</div>
+<div class="form-group">
+    <label asp-for="ToDate" class="control-label col-md-2"></label>
+    <div class="col-md-4">
+        <input asp-for="ToDate" class="form-control" type="date" required />
+    </div>
+</div>
+<div class="form-group">
+    <label asp-for="FromTime" class="control-label col-md-2"></label>
+    <div class="col-md-4">
+        <input asp-for="FromTime" class="form-control" type="time" required />
+    </div>
+</div>
+<div class="form-group">
+    <label asp-for="ToTime" class="control-label col-md-2"></label>
+    <div class="col-md-4">
+        <input asp-for="ToTime" class="form-control" type="time" required />
+    </div>
+</div>
+<div class="form-group">
+    <label asp-for="RoomType" class="control-label col-md-2"></label>
+    <div class="col-md-4">
+        <select asp-for="RoomType" class="form-control" required>
+            <option value="">Select Room Type</option>
+            <option value="AC">AC</option>
+            <option value="Non-AC">Non-AC</option>
+        </select>
+    </div>
+</div><br />
+<div>
+    <a class="btn btn-primary btn-lg" asp-controller="Home" asp-action="Search"><button type="submit" class="btn btn-primary btn-lg">Search &raquo;</button></a>
+</div><br />
+<br />
+<p>Enjoy Your Stay!</p>
+
+
+
