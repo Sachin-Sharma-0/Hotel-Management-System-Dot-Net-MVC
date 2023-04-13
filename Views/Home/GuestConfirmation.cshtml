@@ -1,0 +1,39 @@
+@model GuestCheckout
+
+<h2>Guest Confirmation</h2>
+
+<p>Thank you for choosing our hotel. Below are the details of your reservation:</p>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <td>Name:</td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <td>Check-in Date:</td>
+            <td>@Model.CheckInDate.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <td>Check-out Date:</td>
+            <td>@Model.CheckOutDate.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <td>Room Type:</td>
+            <td>@Model.RoomType</td>
+        </tr>
+        <tr>
+            <td>Number of Guests:</td>
+            <td>@Model.NumberOfGuests</td>
+        </tr>
+
+
+
+    </tbody>
+</table>
+
+
