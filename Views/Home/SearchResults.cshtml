@@ -1,0 +1,31 @@
+@using HotelMgmtSys.Models;
+
+@model List<RoomSearch>
+
+<h2>Search Results</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Room Type</th>
+            <th>Fare</th>
+            <th>Capacity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var room in Model)
+        {
+            <tr>
+                <td>@room.RoomType</td>
+                <td>@room.Fare</td>
+                <td>@room.Capacity</td>
+                <td>
+                    <a asp-action="BookRoom" asp-route-id="@room.RoomId">Book Room</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
