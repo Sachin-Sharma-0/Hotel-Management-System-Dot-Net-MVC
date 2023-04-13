@@ -1,0 +1,80 @@
+@model ClientDashboardViewModel
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Welcome</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h4>Current Bookings</h4>
+        @if (Model.CurrentBookings.Count > 0)
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Room Number</th>
+                        <th>From Date</th>
+                        <th>To Date</th>
+                        <th>Date of Booking</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var booking in Model.CurrentBookings)
+                    {
+                        <tr>
+                            <td>@booking.RoomNumber</td>
+                            <td>@booking.FromDate.ToShortDateString()</td>
+                            <td>@booking.ToDate.ToShortDateString()</td>
+                            <td>@booking.BookingDate.ToShortDateString()</td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>You have no current bookings.</p>
+        }
+    </div>
+    <div class="col-md-6">
+        <h4>Past Bookings</h4>
+        @if (Model.PastBookings.Count > 0)
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Room Number</th>
+                        <th>From Date</th>
+                        <th>To Date</th>
+                        <th>Date of Booking</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var booking in Model.PastBookings)
+                    {
+                        <tr>
+                            <td>@booking.RoomNumber</td>
+                            <td>@booking.FromDate.ToShortDateString()</td>
+                            <td>@booking.ToDate.ToShortDateString()</td>
+                            <td>@booking.BookingDate.ToShortDateString()</td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>You have no past bookings.</p>
+        }
+    </div>
+</div>
+
+        }
+
+
